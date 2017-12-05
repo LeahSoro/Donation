@@ -1,0 +1,67 @@
+﻿@using SimchaDonors.Data;
+@using SimchaDonors.Web.Models;
+@model ContributorViewModel
+<form method="Post" action="/home/ContributeToSimcha">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Contribute</th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Always Include</th>
+            <th>Amount</th>
+        </tr>
+
+        @{ int i = 0;}
+        @foreach (Contributor c in Model.contributors)
+        {
+
+            <tr>
+                <td>
+                    @foreach (DonateToSimcha d in Model.Donated)
+                    {
+                        if (c.Id == d.Contributorid)
+                        {
+                            <input class="form-control" type="checkbox" checked name="simcha[@i].Include" value="true" />
+                        }
+                        else
+                        {                       
+                             <input class="form-control" type="checkbox" checked name="simcha[@i].Include" value="true" />
+                        }
+                    }
+
+                    <span>Include</span>
+                    <input class="form-control" type="hidden" name="simcha[@i].Include]" value="false" />
+
+
+                </td>
+                <td>@c.LastName @c.FirstName</td>
+                <td>@c.Balance</td>
+                <td>
+                    @if (c.AllwaysInclude == true)
+                    {
+                        <span class="glyphicon glyphicon-ok-sign"></span>
+                    }
+                    else
+                    {
+
+                    }
+                </td>
+                <td>
+                    <input class="form-control" type="hidden" name="simcha[@i].contributorid" value="@c.Id" />
+                    <input class="form-control" type="hidden" name="simcha[@i].simchaid" value="@Model.simchaid" />
+                    <input class="form-control" type="text" name="simcha[@i].Amount" value="5" />
+                </td>
+            </tr>
+            { i++; }
+
+        }
+
+
+    </table>
+
+    }
+
+    <button class="btn btn-danger">Update</button>
+</form>
+
+

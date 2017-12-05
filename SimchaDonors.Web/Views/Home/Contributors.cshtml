@@ -1,0 +1,62 @@
+﻿@using SimchaDonors.Data;
+@using SimchaDonors.Web.Models;
+@model ContributorViewModel
+
+@if (Model.contributors == null)
+{
+    <h>There are no records to show! Add Person</h>
+}
+else
+{
+    <div class="col-md-offset-5">
+        <h2>Contributors</h2>
+
+    </div>
+    <div class="col-md-offset-2">
+        <a class="btn btn-danger" href="/Home/NewContributor">New Contributor</a>
+        <input id="filter" type="text" placeholder="Search" name="search" />
+        <a class="btn btn-primary">Clear</a>
+    </div>
+    <br />
+    <table class="table-bordered table-striped col-md-8 col-md-offset-2 well">
+        <tr>
+            <th>Deposit</th>
+            <th>Name</th>
+            <th>Cell</th>
+            <th>Balance</th>
+            <th>Always Include</th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (Contributor c in Model.contributors)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-warning" href="/home/Deposit?id=@c.Id">Deposit</a>
+                </td>
+                <td>@c.LastName @c.FirstName</td>
+                <td>@c.CellNumber</td>
+                <td>@c.Balance.ToString("C")</td>
+                            <td>
+                                @if (c.AllwaysInclude == true)
+                                {
+                                    <input type="checkbox" checked />
+                                }
+                                else
+                                {
+                                    <input type="checkbox" />
+                                }
+                            </td>
+                            <td>
+                                <a class="btn btn-success" href="/home/ShowHistory?id=@c.Id">Show History</a>
+                                <button class="btn btn-primary" action="/home/Edit">Edit</button>
+                            </td>
+                        </tr>
+
+        }
+
+    </table>
+
+
+
+}

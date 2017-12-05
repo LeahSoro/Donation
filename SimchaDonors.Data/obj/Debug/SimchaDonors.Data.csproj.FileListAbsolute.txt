@@ -1,0 +1,5 @@
+C:\Users\Eliezer and Leah\documents\visual studio 2015\SimchaDonors\SimchaDonors.Data\bin\Debug\SimchaDonors.Data.dll
+C:\Users\Eliezer and Leah\documents\visual studio 2015\SimchaDonors\SimchaDonors.Data\bin\Debug\SimchaDonors.Data.pdb
+C:\Users\Eliezer and Leah\documents\visual studio 2015\SimchaDonors\SimchaDonors.Data\obj\Debug\SimchaDonors.Data.csprojResolveAssemblyReference.cache
+C:\Users\Eliezer and Leah\documents\visual studio 2015\SimchaDonors\SimchaDonors.Data\obj\Debug\SimchaDonors.Data.dll
+C:\Users\Eliezer and Leah\documents\visual studio 2015\SimchaDonors\SimchaDonors.Data\obj\Debug\SimchaDonors.Data.pdb

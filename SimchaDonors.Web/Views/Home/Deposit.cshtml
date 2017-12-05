@@ -1,0 +1,14 @@
+﻿@using SimchaDonors.Web.Models;
+@model ContributionViewModel
+<div class="container">
+    <div class="col-md-offset-5">
+        <form method="post" action="/home/NewDeposit" class="form-control">
+            <input type="hidden" name="contributorid" value="@Model.id" />
+            <input type="text" class="form-control"name="amount" placeholder="DepositAmount" />
+            <br />
+            <input type="date" class="form-control" name="date" placeholder="Date" />
+            <br />
+            <button class="btn btn-success">Save</button>
+        </form>
+    </div>
+</div>
